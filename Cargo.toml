@@ -2,6 +2,10 @@
 name = "ktest-macros"
 version = "0.1.0"
 edition = "2024"
+authors = ["Philo Groves <philogroves@gmail.com>"]
+description = "Procedural macros for the ktest testing framework"
+license = "MIT"
+repository = "https://github.com/philogroves/ktest_macros"
 
 [lib]
 proc-macro = true
