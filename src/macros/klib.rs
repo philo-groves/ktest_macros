@@ -2,11 +2,11 @@ use proc_macro::TokenStream;
 use quote::quote;
 use syn::{parse_macro_input, LitStr};
 
-pub fn klib(args: TokenStream, item: TokenStream) -> TokenStream {
-    let crate_name = if args.is_empty() {
+pub fn klib(attr: TokenStream, item: TokenStream) -> TokenStream {
+    let crate_name = if attr.is_empty() {
         quote! { env!("CARGO_PKG_NAME") }
     } else {
-        let name = parse_macro_input!(args as LitStr);
+        let name = parse_macro_input!(attr as LitStr);
         quote! { #name }
     };
     
